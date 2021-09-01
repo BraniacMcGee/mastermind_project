@@ -5,19 +5,20 @@ class Game
     @secret = secret
   end
 
-  def welcome
-    puts "Welcome to MASTERMIND"
-    puts "Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
-
+  def greeting
+    puts "Welcome to MASTERMIND!
+    Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     response = gets.chomp
-    if response == 'p'
+    if response == 'p' || response == 'P'
       puts 'This is a placeholder'
-    elsif response == 'i'
+    elsif response == 'i' || response == 'I'
       puts 'here are the instructions'
-    elsif response == 'q'
-      puts welcome
+    elsif response == 'q' || response == 'Q'
+      puts greeting
+    else
+      puts 'Please select one of the options above'
     end
   end
 end
 
-Game.welcome
+return greeting
