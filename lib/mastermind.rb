@@ -19,5 +19,3 @@ class Game
     end
   end
 end
-
-Game.welcome
