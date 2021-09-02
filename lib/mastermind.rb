@@ -17,8 +17,10 @@ class Game
       puts greeting
     else
       puts 'Please select one of the options above'
+      puts greeting
     end
   end
 end
 
-return greeting
+game = Game.new(['R', 'R', 'R', 'R'])
+game.greeting
