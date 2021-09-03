@@ -36,6 +36,7 @@ def greeting
   elsif response == 'Q' || response == 'q'
     puts greeting
   else puts 'Please select one of the options above'
+    puts greeting
   end
 end
 
