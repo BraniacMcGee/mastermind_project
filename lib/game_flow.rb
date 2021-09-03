@@ -12,6 +12,7 @@ class Game_Flow
   end
 
   def instructions
+    p 'A code has been generated at random. The code is made up of the colors (r)ed, (g)reen, (b)lue, and (y)ellow in no specific order. Enter your guess and use the hints provided to crack the code in as little guesses as possible!'
   end
 
   def cheat
