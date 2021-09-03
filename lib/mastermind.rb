@@ -17,11 +17,10 @@ class Game
       puts greeting
     else puts 'Please select one of the options above'
       puts greeting
->>>>>>> 97736fdff249b74f1b2c90145090d17444b55581
+
     end
   end
 end
 
 game = Game.new(['R', 'R', 'R', 'R'])
 game.greeting
->>>>>>> 97736fdff249b74f1b2c90145090d17444b55581
