@@ -10,9 +10,9 @@ class Game
     Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     response = gets.chomp
     if response == 'P' || response == 'p'
-      sequences.play
+      game_flow.play
     elsif response == 'I' || response ==  'i'
-      sequences.instructions
+      game_flow.instructions
     elsif response == 'Q' || response == 'q'
       puts greeting
     else puts 'Please select one of the options above'

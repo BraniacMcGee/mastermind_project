@@ -1,17 +1,25 @@
 class Secret
-  attr_reader :secret_code
+  attr_reader :secret_code,
+              :result
 
   def initialize(secret_code)
   @secret_code = secret_code
+  @result      = results
   end
 
-  def secret_code
-    @secret_code
-  end
+  # def secret_code
+  #   @secret_code
+  # end
 
   def generate_code
-
-    secret_code = ['R', 'G', 'B', 'Y']
+  result = []
+    @secret_code = ['R', 'G', 'B', 'Y']
     4.times.map {secret_code.sample}
+
+#would this be better to do than ^ if we need to call on the output later???
+  #secret.each do
+    #secret.shuffle!
+  #end
+
   end
 end
