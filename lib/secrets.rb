@@ -1,10 +1,12 @@
 class Secret
   attr_reader :secret_code,
-              :result
+              :result,
+              :convert
 
   def initialize(secret_code)
   @secret_code = secret_code
-  @result      = results
+  @result      = result
+  #@secret_code = generate_code
   end
 
   # def secret_code
