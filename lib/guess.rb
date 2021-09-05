@@ -2,7 +2,8 @@ class Guess
   attr_reader :secrets,
               :convert,
               :guess_counter,
-              :timer
+              :timer,
+              :secret_code
 
   def initialize(guess)
     @guess = guess
@@ -29,10 +30,28 @@ class Guess
     @guess.eql?(@secret)
   end
 
-  def you_win
-    if has_won? = true
-      p 'Congratulations! You guessed the sequence #{@secret}
-      in #{mastermind.guess_counter} guesses in #{mastermind.timer}
+  def generate_code
+    @secret.generate_code
+  end
+
+  def compare_guess
+    correct_guesses = []
+    if @guess.split('')[0] == generate_code[0]
+      correct_guesses << @guess.split('')[0]
+    elsif @guess.split('')[1] == generate_code[1]
+      correct_guesses << @guess.split('')[1]
+    elsif @guess.split('')[2] == generate_code[2]
+      correct_guesses << @guess.split('')[2]
+    elsif @guess.split('')[3] == generate_code[3]
+      correct_guesses << @guess.split('')[3]
+    end
+  end
+
+  # def you_win
+  #   if has_won? = true
+  #     p 'Congratulations! You guessed the sequence #{@secret}
+  #     in #{mastermind.guess_counter} guesses in #{mastermind.timer}'
+  #   end
 end
 #
 # guess = Guess.new('YRGB')

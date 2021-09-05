@@ -52,11 +52,16 @@ describe 'Guess' do
   expect(guess.error_message).to eq('Your guess is too short. All guesses must be 4 characters. Please try again.')
   end
 
-  xit 'compares guess to secret' do
+  it 'compares guess to secret' do
     guess = Guess.new('RGBY')
-    @secret = ['Y', 'G', 'B', 'R']
-    guess1  = ['B', 'G', 'Y', 'R']
+    correct_guesses = []
+    allow(guess).to receive(:generate_code).and_return(['R','B','G','Y'])
+    expect(guess.compare_guess).to be_an Array
+    allow(guess).to receive(:generate_code).and_return(['G','R','Y','B'])
+    expect(guess.compare_guess).to eq(NIL)
+
+  end
     # 'rrgb' has 3 of the correct elements with 2 in the correct positios
     #you've taken 1 guess
-  end
+
 end

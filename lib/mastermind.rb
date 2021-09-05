@@ -21,6 +21,9 @@ class Game
     end
   end
 
+  def attempts
+  end
+
   def guess_counter
     count = 0
     @guess
