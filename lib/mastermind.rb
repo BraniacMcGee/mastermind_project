@@ -20,6 +20,18 @@ class Game
 
     end
   end
+
+  def guess_counter
+    count = 0
+    @guess
+    count +=1
+  end
+
+  def timer
+    start = Time.now
+    finish = Time.now
+    diff = finish - start
+  end
 end
 
 game = Game.new(['R', 'R', 'R', 'R'])

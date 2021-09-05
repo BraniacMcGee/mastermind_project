@@ -1,6 +1,8 @@
 class Guess
   attr_reader :secrets,
-              :convert
+              :convert,
+              :guess_counter,
+              :timer
 
   def initialize(guess)
     @guess = guess
@@ -23,11 +25,14 @@ class Guess
     end
   end
 
-  def compare_guess(secret)
-    #use @guess.eql?(@secret) to test win
-    #comparing index tests how many in the right spot
-    #
+  def has_won?(secret)
+    @guess.eql?(@secret)
   end
+
+  def you_win
+    if has_won? = true
+      p 'Congratulations! You guessed the sequence #{@secret}
+      in #{mastermind.guess_counter} guesses in #{mastermind.timer}
 end
 #
 # guess = Guess.new('YRGB')
