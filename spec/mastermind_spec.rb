@@ -4,12 +4,9 @@ require './lib/play'
 
 RSpec.describe Game do
   it 'exists' do
-<<<<<<< HEAD
     game = Game.new(['R', 'R', 'G', 'Y'])
-=======
-  game = Game.new(secret)
-  secret = ['R', 'R', 'R', 'R']
->>>>>>> 128ccf51ac7e5c5345ac3183b5cb6befdcb34bd0
+    game = Game.new(secret)
+    secret = ['R', 'R', 'R', 'R']
 
     expect(game).to be_an_instance_of(Game)
   end

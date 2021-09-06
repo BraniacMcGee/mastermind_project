@@ -45,7 +45,13 @@ class Guess
     elsif @guess.split('')[3] == generate_code[3]
       correct_guesses << @guess.split('')[3]
     end
+    #more compact way to do above but needs new test
+    #correct_guesses = @guess.split('') & @secret.generate_code
   end
+
+  #this will solve for index positions
+  #array1.zip(array2).map { |a, b| a if a != b }
+  #.length of the result for #
 
   # def you_win
   #   if has_won? = true
