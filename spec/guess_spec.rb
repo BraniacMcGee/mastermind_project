@@ -66,6 +66,13 @@ describe 'Guess' do
     guess = Guess.new('RGBY')
     allow(guess).to receive(:generate_code).and_return(['R','B','G','Y'])
     expect(guess.compare_guess).to be_an Array
+    allow(guess).to receive(:generate_code).and_return(['G','R','Y','B'])
+    expect(guess.compare_guess).to eq(NIL)
+  end
+
+  xit 'has an output' do
+    guess = Guess.new('RGBY')
+  expect(guess.guess_output).to be_a String
   end
     # 'rrgb' has 3 of the correct elements with 2 in the correct positios
     #you've taken 1 guess

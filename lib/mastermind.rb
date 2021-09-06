@@ -1,8 +1,12 @@
+require './Game_Flow'
+
 class Game
-  attr_reader :secret
+  attr_reader :secret,
+              :play
 
   def initialize(secret)
     @secret = secret
+    @game_flow = Game_Flow.new
   end
 
   def greeting
@@ -10,9 +14,9 @@ class Game
     Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     response = gets.chomp.upcase
     if response == 'P'
-      game_flow.play
+      Game_Flow.play
     elsif response == 'I'
-      game_flow.instructions
+      Game_Flow.instructions
     elsif response == 'Q'
       puts greeting
     else puts 'Please select one of the options above'

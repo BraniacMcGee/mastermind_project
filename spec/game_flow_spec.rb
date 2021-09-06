@@ -1,6 +1,7 @@
 require 'rspec'
 require './lib/secrets'
 require './lib/game_flow'
+require './lib/guess'
 
 describe 'Game_flow' do
   it 'exists' do

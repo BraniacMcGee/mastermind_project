@@ -59,10 +59,6 @@ class Guess
   end
 end
 
-  #this will solve for index positions
-  #array1.zip(array2).map { |a, b| a if a != b }
-  #.length of the result for #
-
   # def you_win
   #   if has_won? = true
   #     p 'Congratulations! You guessed the sequence #{@secret}
