@@ -8,17 +8,20 @@ class Game
   def greeting
     puts "Welcome to MASTERMIND!
     Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
-    response = gets.chomp
-    if response == 'P' || response == 'p'
+    response = gets.chomp.upcase
+    if response == 'P'
       game_flow.play
-    elsif response == 'I' || response ==  'i'
+    elsif response == 'I'
       game_flow.instructions
-    elsif response == 'Q' || response == 'q'
+    elsif response == 'Q'
       puts greeting
     else puts 'Please select one of the options above'
       puts greeting
 
     end
+  end
+
+  def attempts
   end
 
   def guess_counter
