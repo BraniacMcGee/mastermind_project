@@ -3,7 +3,7 @@ class Secret
               :result,
               :convert
 
-  def initialize(secret_code)
+  def initialize
   @secret_code = secret_code
   @result      = result
   #@secret_code = generate_code

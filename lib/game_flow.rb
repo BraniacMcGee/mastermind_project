@@ -1,13 +1,15 @@
+require './lib/mastermind'
+require './lib/guess'
+
 class Game_Flow
-  attr_reader :convert,
-              :play
+  attr_reader :play
 
   def initialize
     @guess          = Guess.new
     @secrets        = Secret.new
   end
 
-  def play(user_input = gets.chomp)
+  def play(user_input = gets.chomp.upcase)
   Secret.generate_code #secret.secret_code
     p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.'
     p "What's your guess?"
@@ -25,6 +27,9 @@ class Game_Flow
   #confirmation statement? Y/N
 
   def quit
+    if user_input == 'Q'
+      puts mastermind.greeting
+    end
   end
 end
 
