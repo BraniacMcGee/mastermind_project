@@ -1,10 +1,10 @@
 class Game_Flow
-  attr_reader :convert
+  attr_reader :convert,
+              :play
 
-  def initialize(game_flow)
-    @game_flow      = game_flow
-    @guess        = Guess.new
-    @secrets      =Secret.new
+  def initialize
+    @guess          = Guess.new
+    @secrets        = Secret.new
   end
 
   def play(user_input = gets.chomp)
@@ -19,7 +19,7 @@ class Game_Flow
   end
 
   def cheat
-    #return secret.
+    p 'Here is the secret code: #{@secret.generate_code}'
   end
 
   #confirmation statement? Y/N
