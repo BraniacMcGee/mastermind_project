@@ -45,9 +45,19 @@ class Guess
     elsif @guess.split('')[3] == generate_code[3]
       correct_guesses << @guess.split('')[3]
     end
+  end
     #more compact way to do above but needs new test
     #correct_guesses = @guess.split('') & @secret.generate_code
+
+
+  def compare_positions
+    @guess.split('').zip(generate_code).map { |a, b| a if a == b }
   end
+
+  def guess_output
+    p "#{@guess} has #{compare_guess.compact.length} of the correct element(s) with #{compare_positions.compact.length} in the correct position(s)"
+  end
+end
 
   #this will solve for index positions
   #array1.zip(array2).map { |a, b| a if a != b }
@@ -58,7 +68,7 @@ class Guess
   #     p 'Congratulations! You guessed the sequence #{@secret}
   #     in #{mastermind.guess_counter} guesses in #{mastermind.timer}'
   #   end
-end
+
 #
 # guess = Guess.new('YRGB')
 # guess.too_long?
