@@ -20,6 +20,7 @@ class Sequences
       p 'Enter your next guess.'
       @guess.gets_input
     end
+
     # @guess.error_message
     # @guess.guess_output
     # @guess.has_won?
@@ -33,9 +34,11 @@ class Sequences
     p 'A code has been generated at random. The code is made up of the colors (r)ed, (g)reen, (b)lue, and (y)ellow in no specific order. Enter your guess and use the hints provided to crack the code in as little guesses as possible!'
   end
 
-  def cheat
-    p 'Here is the secret code: #{@secret.generate_code}'
-  end
+  # def cheat
+  #   if @guess.gets_input == 'c' || "C"
+  #   p "The secret code is #{@secret.generate_code}."
+  #   end
+  # end
 
   def quit
     if gets.chomp.upcase == 'Q'
