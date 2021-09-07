@@ -1,19 +1,27 @@
 require './lib/guess'
 require './lib/secrets'
-require './lib/mastermind'
+require './lib/game'
 
 class Sequences
 
+  def initialize
+    @secret = Secret.new
+    @guess = Guess.new
+  end
+
   def play
-    Secret.generate_code
+    @secret.generate_code
     p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.'
     p "What's your guess?"
     gets.chomp
 
-    until Guess.has_won? do
-      Guess.error_message
-      Guess.guess_output
-    end
+    @guess.error_message
+    @guess.guess_output
+    @guess.has_won?
+
+    # until @guess.has_won? do
+    #   @guess.guess_output
+    # end
   end
 
   def instructions

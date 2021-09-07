@@ -1,5 +1,5 @@
 require './lib/game'
-require './lib/sequences'
+#require './lib/sequences'
 
 game = Game.new
 # guess = Guess.new

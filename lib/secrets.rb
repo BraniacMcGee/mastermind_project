@@ -15,7 +15,6 @@ class Secret
 
   def generate_code
   result = []
-  require "pry"; binding.pry
     @secret_code = ['R', 'G', 'B', 'Y']
     4.times.map {secret_code.sample}
 
