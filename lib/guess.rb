@@ -6,7 +6,7 @@ class Guess
               :secret_code
 
   def initialize(guess)
-    @guess = guess
+    @guess = gets.chomp
     @secret = Secret.new(['R', 'G', 'B', 'Y'])
   end
 
