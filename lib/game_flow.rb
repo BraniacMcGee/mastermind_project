@@ -10,7 +10,7 @@ class Game_Flow
   end
 
   def play(user_input = gets.chomp.upcase)
-  Secret.generate_code #secret.secret_code
+  Secret.generated_code #secret.secret_code
     p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.'
     p "What's your guess?"
       user_input
@@ -21,7 +21,7 @@ class Game_Flow
   end
 
   def cheat
-    p 'Here is the secret code: #{@secret.generate_code}'
+    p 'Here is the secret code: #{@secret.generated_code}'
   end
 
   #confirmation statement? Y/N

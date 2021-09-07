@@ -5,9 +5,9 @@ class Guess
               :timer,
               :secret_code
 
-  def initialize(guess)
-    @guess = guess
-    @secret = Secret.new
+  def initialize(secret)
+    # @guess = guess
+    @secret = secret
   end
 
   def gets_input
@@ -34,30 +34,31 @@ class Guess
     @guess.eql?(@secret)
   end
 
-  #this returns a new code every time unlike secret.generate_code
-  def generate_code
-    @secret.generate_code
-  end
+  #this returns a new code every time unlike secret.generated_code
+  # def generate_code
+  #   @secret.generated_code
+  # end
 
   def compare_guess
+    require "pry"; binding.pry
     correct_guesses = []
-    if @guess.split('')[0] == @secret.generate_code[0]
+    if @guess.split('')[0] == @secret.generated_code[0]
       correct_guesses << @guess.split('')[0]
-    elsif @guess.split('')[1] == @secret.generate_code[1]
+    elsif @guess.split('')[1] == @secret.generated_code[1]
       correct_guesses << @guess.split('')[1]
-    elsif @guess.split('')[2] == @secret.generate_code[2]
+    elsif @guess.split('')[2] == @secret.generated_code[2]
       correct_guesses << @guess.split('')[2]
-    elsif @guess.split('')[3] == @secret.generate_code[3]
+    elsif @guess.split('')[3] == @secret.generated_code[3]
       correct_guesses << @guess.split('')[3]
     end
     correct_guesses.length
   end
     #more compact way to do above but needs new test
-    #correct_guesses = @guess.split('') & @secret.generate_code
+    #correct_guesses = @guess.split('') & @secret.generated_code
 
 
   def compare_positions
-    result = @guess.split('').zip(@secret.generate_code).map { |a, b| a if a == b }
+    result = @guess.split('').zip(@secret.generated_code).map { |a, b| a if a == b }
     result.compact.length
   end
 

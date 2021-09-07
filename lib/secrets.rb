@@ -1,6 +1,7 @@
 class Secret
   attr_reader :secret_code,
               :result,
+              :generated_code
 
 
   def initialize
@@ -16,6 +17,6 @@ class Secret
   def generate_code
     result = []
     @secret_code = ['R', 'G', 'B', 'Y']
-    result.concat(4.times.map {secret_code.sample})
+    @generated_code = result.concat(4.times.map {secret_code.sample})
   end
 end
