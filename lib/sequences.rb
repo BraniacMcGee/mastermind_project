@@ -6,7 +6,7 @@ class Sequences
 
   def initialize
     @secret = Secret.new
-    @guess = Guess.new(gets.chomp)
+    @guess = Guess.new(@secret)#(gets.chomp)
   end
 
   def play
@@ -36,7 +36,7 @@ class Sequences
 
   # def cheat
   #   if @guess.gets_input == 'c' || "C"
-  #   p "The secret code is #{@secret.generate_code}."
+  #   p "The secret code is #{@secret.generated_code}."
   #   end
   # end
 
