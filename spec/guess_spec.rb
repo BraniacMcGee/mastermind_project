@@ -1,13 +1,12 @@
 require 'rspec'
 require './lib/secrets'
-require './lib/game_flow'
 require './lib/guess'
 
 describe 'Guess' do
 
   it 'exists' do
-  guess = Guess.new('RGBY')
-  @secret = ['Y', 'G', 'B', 'R']
+    guess = Guess.new('RGBY')
+    @secret = ['Y', 'G', 'B', 'R']
 
     expect(guess).to be_an_instance_of Guess
   end
