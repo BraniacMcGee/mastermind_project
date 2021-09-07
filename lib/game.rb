@@ -17,7 +17,8 @@ class Game
     if response == 'P'
       @sequence.play
     elsif response == 'I'
-      Sequences.instructions
+      @sequence.instructions
+      p greeting
     elsif response == 'Q'
       puts greeting
     else puts 'Please select one of the options above'

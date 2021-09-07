@@ -19,7 +19,7 @@ class Sequences
       @guess.guess_output
       p 'Enter your next guess.'
       @guess.gets_input
-    end 
+    end
     # @guess.error_message
     # @guess.guess_output
     # @guess.has_won?
