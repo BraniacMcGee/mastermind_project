@@ -5,11 +5,14 @@ class Guess
               :timer,
               :secret_code
 
-  def initialize(guess = gets.chomp)
+  def initialize(guess)
     @guess = guess
     @secret = Secret.new
   end
 
+  def gets_input
+    @guess = gets.chomp
+  end
 
   def too_short?
     @guess.split('').count < 4
@@ -31,19 +34,20 @@ class Guess
     @guess.eql?(@secret)
   end
 
+  #this returns a new code every time unlike secret.generate_code
   def generate_code
     @secret.generate_code
   end
 
   def compare_guess
     correct_guesses = []
-    if @guess.split('')[0] == generate_code[0]
+    if @guess.split('')[0] == @secret.generate_code[0]
       correct_guesses << @guess.split('')[0]
-    elsif @guess.split('')[1] == generate_code[1]
+    elsif @guess.split('')[1] == @secret.generate_code[1]
       correct_guesses << @guess.split('')[1]
-    elsif @guess.split('')[2] == generate_code[2]
+    elsif @guess.split('')[2] == @secret.generate_code[2]
       correct_guesses << @guess.split('')[2]
-    elsif @guess.split('')[3] == generate_code[3]
+    elsif @guess.split('')[3] == @secret.generate_code[3]
       correct_guesses << @guess.split('')[3]
     end
     correct_guesses.length
@@ -53,7 +57,7 @@ class Guess
 
 
   def compare_positions
-    result = @guess.split('').zip(generate_code).map { |a, b| a if a == b }
+    result = @guess.split('').zip(@secret.generate_code).map { |a, b| a if a == b }
     result.compact.length
   end
 

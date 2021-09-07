@@ -55,21 +55,21 @@ describe 'Guess' do
     guess = Guess.new('RGBY')
     correct_guesses = []
     allow(guess).to receive(:generate_code).and_return(['R','B','G','Y'])
-    expect(guess.compare_guess).to be_an Array
+    expect(guess.compare_guess).to be_an Integer
     allow(guess).to receive(:generate_code).and_return(['G','R','Y','B'])
-    expect(guess.compare_guess).to eq(NIL)
+    expect(guess.compare_guess).to eq(0)
 
   end
 
   it 'can compare positions' do
     guess = Guess.new('RGBY')
     allow(guess).to receive(:generate_code).and_return(['R','B','G','Y'])
-    expect(guess.compare_guess).to be_an Array
+    expect(guess.compare_guess).to be_an Integer
     allow(guess).to receive(:generate_code).and_return(['G','R','Y','B'])
-    expect(guess.compare_guess).to eq(NIL)
+    expect(guess.compare_guess).to eq(0)
   end
 
-  xit 'has an output' do
+  it 'has an output' do
     guess = Guess.new('RGBY')
   expect(guess.guess_output).to be_a String
   end
