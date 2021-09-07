@@ -14,15 +14,8 @@ class Secret
   # end
 
   def generate_code
-  result = []
+    result = []
     @secret_code = ['R', 'G', 'B', 'Y']
-    4.times.map {secret_code.sample}
-
-
-#would this be better to do than ^ if we need to call on the output later???
-  #secret.each do
-    #secret.shuffle!
-  #end
-
+    result.concat(4.times.map {secret_code.sample})
   end
 end

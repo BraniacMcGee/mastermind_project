@@ -15,9 +15,14 @@ class Sequences
     p "What's your guess?"
     @guess.gets_input
 
-    @guess.error_message
-    @guess.guess_output
-    @guess.has_won?
+    until @guess.has_won? do
+      @guess.guess_output
+      p 'Enter your next guess.'
+      @guess.gets_input
+    end 
+    # @guess.error_message
+    # @guess.guess_output
+    # @guess.has_won?
 
     # until @guess.has_won? do
     #   @guess.guess_output
