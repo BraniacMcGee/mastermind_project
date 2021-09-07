@@ -5,11 +5,14 @@ class Guess
               :timer,
               :secret_code
 
-  def initialize(guess = gets.chomp)
+  def initialize(guess)
     @guess = guess
     @secret = Secret.new
   end
 
+  def gets_input
+    @guess = gets.chomp
+  end
 
   def too_short?
     @guess.split('').count < 4

@@ -6,14 +6,14 @@ class Sequences
 
   def initialize
     @secret = Secret.new
-    @guess = Guess.new
+    @guess = Guess.new(gets.chomp)
   end
 
   def play
     @secret.generate_code
     p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.'
     p "What's your guess?"
-    gets.chomp
+    @guess.gets_input
 
     @guess.error_message
     @guess.guess_output
