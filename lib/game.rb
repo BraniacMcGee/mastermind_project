@@ -1,7 +1,6 @@
-require './sequences'
-require './secrets'
-require './guess'
-
+require './lib/sequences'
+require './lib/secrets'
+require './lib/guess'
 class Game
   attr_reader :secret,
               :play
@@ -16,7 +15,7 @@ class Game
     Would you like to (p)lay, read the (i)nstructions, or (q)uit?"
     response = gets.chomp.upcase
     if response == 'P'
-      Sequences.play
+      @sequence.play
     elsif response == 'I'
       Sequences.instructions
     elsif response == 'Q'
@@ -26,8 +25,8 @@ class Game
     end
   end
 
-  game = Game.new
-  game.greeting
+  # game = Game.new
+  # game.greeting
 
   def guess_counter
     count = 0

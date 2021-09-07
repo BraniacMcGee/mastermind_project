@@ -1,10 +1,10 @@
 require './lib/game'
-require './lib/secrets'
-require './lib/sequences'
-require './lib/guess'
+#require './lib/sequences'
 
 game = Game.new
-sequences = Sequences.new
+# guess = Guess.new
 
 game.greeting
-sequences.play
+# guess.compare_guess
+# guess.compare_positions
+# guess.guess_output

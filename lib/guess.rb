@@ -10,23 +10,24 @@ class Guess
     @secret = Secret.new
   end
 
+
   def too_short?
-  true == @guess.split('').count < 4
+    @guess.split('').count < 4
   end
 
   def too_long?
-    true == @guess.split('').count > 4
+    @guess.split('').count > 4
   end
 
   def error_message
-    if too_long? == true
+    if too_long?
       p 'Your guess is too long. All guesses must be 4 characters. Please try again.'
-    elsif too_short? == true
+    elsif too_short?
       p 'Your guess is too short. All guesses must be 4 characters. Please try again.'
     end
   end
 
-  def has_won?(secret)
+  def has_won?
     @guess.eql?(@secret)
   end
 
@@ -45,17 +46,20 @@ class Guess
     elsif @guess.split('')[3] == generate_code[3]
       correct_guesses << @guess.split('')[3]
     end
+    correct_guesses.length
   end
     #more compact way to do above but needs new test
     #correct_guesses = @guess.split('') & @secret.generate_code
 
 
   def compare_positions
-    @guess.split('').zip(generate_code).map { |a, b| a if a == b }
+    result = @guess.split('').zip(generate_code).map { |a, b| a if a == b }
+    result.compact.length
   end
 
+
   def guess_output
-    p "#{@guess} has #{compare_guess.compact.length} of the correct element(s) with #{compare_positions.compact.length} in the correct position(s)"
+    p "#{@guess} has #{compare_guess} of the correct element(s) with #{compare_positions} in the correct position(s)"
   end
 end
 
