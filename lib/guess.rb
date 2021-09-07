@@ -5,9 +5,9 @@ class Guess
               :timer,
               :secret_code
 
-  def initialize(guess)
-    @guess = gets.chomp
-    @secret = Secret.new(['R', 'G', 'B', 'Y'])
+  def initialize(guess = gets.chomp)
+    @guess = guess
+    @secret = Secret.new
   end
 
   def too_short?
