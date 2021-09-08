@@ -6,7 +6,6 @@ describe 'Secret' do
   secret = Secret.new
 
   expect(secret).to be_an_instance_of Secret
-  # expect(secret.generated_code).to be_an Array
   end
 
   it 'generates a random code' do

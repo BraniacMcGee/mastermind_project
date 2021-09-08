@@ -73,7 +73,4 @@ describe 'Guess' do
     guess = Guess.new('RGBY')
   expect(guess.guess_output).to be_a String
   end
-    # 'rrgb' has 3 of the correct elements with 2 in the correct positios
-    #you've taken 1 guess
-
 end

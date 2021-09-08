@@ -1,7 +1,3 @@
-require './lib/guess'
-require './lib/secrets'
-require './lib/game'
-
 class Sequences
 
   def initialize(secret)
