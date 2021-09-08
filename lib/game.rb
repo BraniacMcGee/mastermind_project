@@ -20,7 +20,8 @@ class Game
       @sequence.instructions
       p greeting
     elsif response == 'Q'
-      puts greeting
+      puts 'Goodbye'
+      @sequence.quit
     else puts 'Please select one of the options above'
       puts greeting
     end

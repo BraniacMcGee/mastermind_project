@@ -18,11 +18,13 @@ class Sequences
     #   end
     # end
 
-    p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.'
+    p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game or use (c)heat now to see the secret code'
     p "What's your guess?"
     start = Time.now
     count = 0
     @guess.gets_input
+    cheat
+    quit
     count += 1
 
     @guess.error_message
@@ -31,10 +33,9 @@ class Sequences
       @guess.guess_output
       p 'Enter your next guess.'
       @guess.gets_input
-      require "pry"; binding.pry
-      if @guess.gets_input == 'C' || @guess.gets_input == 'c'
-        cheat
-      end
+      @guess.error_message
+      cheat
+      quit
       count += 1
     end
 
@@ -45,6 +46,7 @@ class Sequences
 
     p "Congratulations! You guessed the sequence #{@secret.generated_code.join} in #{count} guesses over #{minutes.round} minutes and #{seconds.round} seconds. Do you want to (p)lay again or (q)uit?"
 
+
     #insert quit
     #a loop back to sequences.play
   end
@@ -54,14 +56,14 @@ class Sequences
   end
 
   def cheat
-    # if @guess == 'c' || "C"
+    if @guess.guess == 'C' || @guess.guess == 'c'
     p "The secret code is #{@secret.generated_code.join}."
-    # end
+    end
   end
 
   def quit
-    if gets.chomp.upcase == 'Q'
-      puts mastermind.greeting
+    if @guess.guess == 'Q'
+      p 'Goodbye'
       exit
     end
   end

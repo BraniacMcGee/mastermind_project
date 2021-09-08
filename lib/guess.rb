@@ -3,7 +3,8 @@ class Guess
               :convert,
               :guess_counter,
               :timer,
-              :secret_code
+              :secret_code,
+              :guess
 
   def initialize(secret)
     # @guess = guess
