@@ -5,9 +5,8 @@ class Secret
 
 
   def initialize
-  @secret_code = secret_code
+  @secret_code = secret_code #generate_code
   @result      = result
-  #@secret_code = generate_code
   end
 
   # def secret_code

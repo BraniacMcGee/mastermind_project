@@ -7,7 +7,7 @@ class Game
 
   def initialize
     @secret = Secret.new
-    @sequence = Sequences.new
+    @sequence = Sequences.new(@secret)
   end
 
   def greeting
@@ -35,11 +35,11 @@ class Game
     count +=1
   end
 
-  def timer
-    start = Time.now
-    finish = Time.now
-    diff = finish - start
-  end
+  # def timer
+  #   start = Time.now
+  #   finish = Time.now
+  #   diff = finish - start
+  # end
 end
 
 

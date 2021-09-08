@@ -11,7 +11,7 @@ class Guess
   end
 
   def gets_input
-    @guess = gets.chomp
+    @guess = gets.chomp.upcase
   end
 
   def too_short?
@@ -31,7 +31,7 @@ class Guess
   end
 
   def has_won?
-    @guess.eql?(@secret)
+    @guess.split('').eql?(@secret.generated_code)
   end
 
   #this returns a new code every time unlike secret.generated_code
@@ -40,17 +40,16 @@ class Guess
   # end
 
   def compare_guess
-    require "pry"; binding.pry
-    correct_guesses = []
-    if @guess.split('')[0] == @secret.generated_code[0]
-      correct_guesses << @guess.split('')[0]
-    elsif @guess.split('')[1] == @secret.generated_code[1]
-      correct_guesses << @guess.split('')[1]
-    elsif @guess.split('')[2] == @secret.generated_code[2]
-      correct_guesses << @guess.split('')[2]
-    elsif @guess.split('')[3] == @secret.generated_code[3]
-      correct_guesses << @guess.split('')[3]
-    end
+    correct_guesses = @guess.split('') & @secret.generated_code
+    # if @guess.split('')[0] == @secret.secret_code[0]
+    #   correct_guesses << @guess.split('')[0]
+    # elsif @guess.split('')[1] == @secret.secret_code[1]
+    #   correct_guesses << @guess.split('')[1]
+    # elsif @guess.split('')[2] == @secret.secret_code[2]
+    #   correct_guesses << @guess.split('')[2]
+    # elsif @guess.split('')[3] == @secret.secret_code[3]
+    #   correct_guesses << @guess.split('')[3]
+    # end
     correct_guesses.length
   end
     #more compact way to do above but needs new test
