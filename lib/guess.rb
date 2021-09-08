@@ -67,7 +67,7 @@ class Guess
   end
 
   # def cheat
-  #   if @guess = 'C' || 'c'
+  #   if @guess == 'C' || 'c'
   #   p @secret.generated_code
   #   end
   # end

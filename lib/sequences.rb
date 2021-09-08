@@ -26,11 +26,15 @@ class Sequences
     count += 1
 
     @guess.error_message
+
     until @guess.has_won? do
       @guess.guess_output
       p 'Enter your next guess.'
       @guess.gets_input
-      # @guess.cheat
+      require "pry"; binding.pry
+      if @guess.gets_input == 'C' || @guess.gets_input == 'c'
+        cheat
+      end
       count += 1
     end
 
@@ -49,16 +53,11 @@ class Sequences
     p 'A code has been generated at random. The code is made up of the colors (r)ed, (g)reen, (b)lue, and (y)ellow in no specific order. Enter your guess and use the hints provided to crack the code in as little guesses as possible!'
   end
 
-  # def cheat
-  #   if
-  #     p @secret.generated_code
-  #   end
-  # end
-  # def cheat
-  #   if @guess.gets_input == 'c' || "C"
-  #   p "The secret code is #{@secret.generated_code}."
-  #   end
-  # end
+  def cheat
+    # if @guess == 'c' || "C"
+    p "The secret code is #{@secret.generated_code.join}."
+    # end
+  end
 
   def quit
     if gets.chomp.upcase == 'Q'
