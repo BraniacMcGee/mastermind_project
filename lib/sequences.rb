@@ -1,7 +1,3 @@
-require './lib/guess'
-require './lib/secrets'
-require './lib/game'
-
 class Sequences
 
   def initialize(secret)
@@ -11,18 +7,14 @@ class Sequences
 
   def play
     @secret.generate_code
-
-    p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game or use (c)heat now to see the secret code'
+    p 'I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game or use (c)heat at any time to see the secret code'
     p "What's your guess?"
     start = Time.now
-    count = 0
     @guess.gets_input
     cheat
     quit
-    count += 1
-
+    count = 1
     @guess.error_message
-
     until @guess.has_won? do
       @guess.guess_output
       p 'Enter your next guess.'
@@ -32,14 +24,11 @@ class Sequences
       quit
       count += 1
     end
-
     finish = Time.now
     difference = finish - start
     seconds = difference % 60
     minutes = (difference/60) % 60
-
     p "Congratulations! You guessed the sequence #{@secret.generated_code.join} in #{count} guesses over #{minutes.round} minutes and #{seconds.round} seconds. Do you want to (p)lay again or (q)uit?"
-
     @guess.gets_input
     if @guess.guess == 'P'
       play
