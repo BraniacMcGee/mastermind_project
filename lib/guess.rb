@@ -65,6 +65,12 @@ class Guess
   def guess_output
     p "#{@guess} has #{compare_guess} of the correct element(s) with #{compare_positions} in the correct position(s)"
   end
+
+  # def cheat
+  #   if @guess = 'C' || 'c'
+  #   p @secret.generated_code
+  #   end
+  # end
 end
 
   # def you_win

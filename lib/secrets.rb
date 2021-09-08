@@ -18,4 +18,10 @@ class Secret
     @secret_code = ['R', 'G', 'B', 'Y']
     @generated_code = result.concat(4.times.map {secret_code.sample})
   end
+
+  def cheat
+    if @guess = 'C'
+    p @generated_code
+    end
+  end
 end

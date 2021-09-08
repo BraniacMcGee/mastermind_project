@@ -29,11 +29,11 @@ class Game
   # game = Game.new
   # game.greeting
 
-  def guess_counter
-    count = 0
-    @guess
-    count +=1
-  end
+  # def guess_counter
+  #   count = 0
+  #   @guess
+  #   count +=1
+  # end
 
   # def timer
   #   start = Time.now
