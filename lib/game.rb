@@ -1,6 +1,7 @@
 require './lib/sequences'
 require './lib/secrets'
 require './lib/guess'
+
 class Game
   attr_reader :secret,
               :play
@@ -26,23 +27,4 @@ class Game
       puts greeting
     end
   end
-
-  # game = Game.new
-  # game.greeting
-
-  # def guess_counter
-  #   count = 0
-  #   @guess
-  #   count +=1
-  # end
-
-  # def timer
-  #   start = Time.now
-  #   finish = Time.now
-  #   diff = finish - start
-  # end
 end
-
-
-# game = Game.new
-# game.greeting('RRRR')
